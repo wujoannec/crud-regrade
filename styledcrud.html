@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Joanne's Online Portfolio">
+    <meta name="author" content="Joanne Wu">
+    <title>Joanne Wu's Blog CRUD</title>
+    <link rel="stylesheet" href="styles2.css">
+  </head>
+  <body style=background-color:pink>
+    <div id="bigger">
+      <script type="module">
+        import {crudOnSubmit} from './blog.js'; 
+        crudOnSubmit();
+      </script>
+      <h1>Joanne's Magical Blog</h1><hr><hr>
+      <h4><i>Blog Post Form</i></h4>
+      <form id="formy">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title"><br>
+        <label for="date">Date</label><br>
+        <input type="text" name="date" id="date"><br>
+        <label for="summary">Summary</label><br>
+        <textarea name="summary" id="summary" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Submit">
+      </form>
+      <br/>
+      <hr>
+      <table id="blog-posts">
+        <caption><h4><i>Blog Log</i></h4></caption>
+        <thead>
+          <tr>
+            <th>Title&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</th>
+            <th>Date&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</th>
+            <th>Summary&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</th>
+          </tr>
+        </thead>
+        <tbody id="blog-table-body">
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

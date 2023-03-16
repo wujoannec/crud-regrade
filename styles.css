@@ -1,0 +1,151 @@
+  /* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  p, li, textarea, button {
+    font-size:x-small;
+  }
+}
+  
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 1024px) {
+  p, li, textarea, button {
+    font-size: small;
+  }
+}
+  
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px){
+  p, li, textarea, button {
+    font-size:medium
+  }
+}
+
+
+
+
+:root{
+  --babypink: #f5d7f5;
+  --babypink2: rgba(255, 255, 255, 0.452);
+  --grey: rgb(105, 101, 104);
+}
+.pics-flex {
+  display: flex;
+  align-items:center;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  border: 10px solid white;
+  background-color: var(--babypink2);
+  
+}
+
+.flex-nav {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(48, 47, 47);
+  position: fixed; 
+  top: 0; 
+  width: 100%;
+  left:0
+  
+}
+
+.flex-nav a{
+  flex: 1;
+  /* color: rgb(97, 176, 187); */
+  color:white;
+  font-size: medium;
+  height: 100%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.flex-nav a:hover{
+  color: pink;
+}
+
+picture{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.mypics{
+  width:  15em;
+  height: 15em;
+  object-fit: cover;
+  align-items: center;
+}
+
+html {
+  font-family: 'Vollkorn', serif;
+  background-color: var(--babypink);
+  color:  var(--grey);
+}
+
+h1 {
+  color:rgb(63, 62, 62);
+  font-size: 5.5vw;
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+     font-size: 4vw;
+  }
+}
+
+h1, h2, h3, h4{
+  font-family: 'Vollkorn', serif;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.main {
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: 96%;
+  padding: 1em;
+  height: 10vw;
+}
+
+.spacefornav p{
+  padding-top: 3px;
+}
+
+/* #experience table{
+  padding-top: 3px;
+  font-size: small;
+} */
+table{
+  padding-top: 3px;
+  font-size: small;
+  color:green;
+}
+
+hr {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 100%;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(238, 226, 230, 0.404), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+.underline{
+  text-decoration: underline;
+}
+
+a{
+  background-color: rgb(149, 92, 175);
+}
+
+#experience{
+  background-color: rgb(223, 197, 245);
+}
