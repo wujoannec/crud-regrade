@@ -19,73 +19,22 @@
   }
 }
 
-
-
-
 :root{
   --babypink: #f5d7f5;
   --babypink2: rgba(255, 255, 255, 0.452);
   --grey: rgb(105, 101, 104);
 }
-.pics-flex {
-  display: flex;
-  align-items:center;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  border: 10px solid white;
-  background-color: var(--babypink2);
-  
-}
-
-.flex-nav {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background-color: rgb(48, 47, 47);
-  position: fixed; 
-  top: 0; 
-  width: 100%;
-  left:0
-  
-}
-
-.flex-nav a{
-  flex: 1;
-  /* color: rgb(97, 176, 187); */
-  color:white;
-  font-size: medium;
-  height: 100%;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-.flex-nav a:hover{
-  color: pink;
-}
-
-picture{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-}
-
-.mypics{
-  width:  15em;
-  height: 15em;
-  object-fit: cover;
-  align-items: center;
-}
 
 html {
   font-family: 'Vollkorn', serif;
-  background-color: var(--babypink);
   color:  var(--grey);
+  background-color: var(--babypink);
 }
 
 h1 {
   color:rgb(63, 62, 62);
   font-size: 5.5vw;
+  text-align: center;
 }
 
 @media screen and (min-width: 1200px) {
@@ -123,10 +72,11 @@ textarea {
   padding-top: 3px;
   font-size: small;
 } */
-table{
+table, th, td{
   padding-top: 3px;
   font-size: small;
-  color:green;
+  border:1px solid black;
+  border-collapse: collapse;
 }
 
 hr {
@@ -148,4 +98,28 @@ a{
 
 #experience{
   background-color: rgb(223, 197, 245);
+}
+
+th{
+  text-align: left;
+  color: rgb(52, 51, 51);
+}
+
+table {
+  border: 1px solid;
+  background-color: white;
+  border-collapse: collapse;
+}
+
+thead{
+  background-color: rgb(182, 138, 202);
+}
+
+#bigger{
+  height: 200px;
+}
+
+tr { 
+  border: solid;
+  border-width: 1px 0;
 }

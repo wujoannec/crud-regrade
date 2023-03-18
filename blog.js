@@ -10,12 +10,10 @@ export function crudOnSubmit() {
             formData["date"] = document.querySelector("#date").value;
             formData["summary"] = document.querySelector("#summary").value;
             if (rowToEdit != null){
-                // console.log("EDIT STREAM")
                 updatePost(formData);
                 blankForm();
             }
             else{
-                // console.log("CREATE STREAM")
                 createPost(formData);
                 blankForm();
             }
@@ -59,7 +57,6 @@ function createPost(data) {
 }
 
 function updatePost(formData) {
-    // console.log("INSIDE UPDATE POST")
     let col0 = rowToEdit.cells[0];
     col0.innerHTML = formData.title;
     let col1 = rowToEdit.cells[1];
@@ -81,7 +78,6 @@ function blankForm() {
 }
 
 function fillFormForEdit(selectedEdit) {
-    // console.log("FILL FORM TO EDIT")
     rowToEdit = selectedEdit.parentElement.parentElement;
     document.querySelector("#title").value = rowToEdit.cells[0].innerHTML;
     document.querySelector("#date").value = rowToEdit.cells[1].innerHTML;
