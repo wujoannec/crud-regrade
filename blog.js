@@ -1,7 +1,6 @@
 let selectedRowToEdit = null;
 
 export function repopulateTable() {
-	//Populate table with data from localstorage 
 	let count2 = 0;
 	let tableBody = document.querySelector("#blog-posts").getElementsByTagName('tbody')[0];
 	removal();
@@ -48,40 +47,52 @@ export function crudOnSubmit() {
 				createPost(formData);
 			}
 			repopulateTable();
-			blankForm();
 		}
 	})
 }
 
 function nonEmptyTitle() {
-    let nonEmptyTitle = true;
-    let formTitle = document.querySelector("#title");
-    formTitle.value == "" ? (nonEmptyTitle = false, alert("Invalid: Must input title")):(nonEmptyTitle = true);
-    return nonEmptyTitle;
+	let nonEmptyTitle = true;
+	let formTitle = document.querySelector("#title");
+	formTitle.value == "" ? (nonEmptyTitle = false, alert("Invalid: Must input title")):(nonEmptyTitle = true);
+	return nonEmptyTitle;
 }
 
 function createPost(formData) {
+	if (formData.title in localStorage) {
+		let confirmationText= `You already have a post titled ${formData.title}. Replace it?`
+		if (confirm(confirmationText) == false)
+			return;
+	}
 	let arr = [formData.date, formData.summary];
 	localStorage.setItem(formData.title, JSON.stringify(arr));
+	blankForm();
 }
 
 function updatePost(formData) {
-	localStorage.removeItem(selectedRowToEdit.cells[0]);
-	createPost(formData);
+	if (formData.title != selectedRowToEdit.cells[0].innerHTML && formData.title in localStorage) {
+		let confirmationText= `You selected to edit a post titled ${selectedRowToEdit.cells[0].innerHTML} but are instead trying to replace the post titled ${formData.title}. Replace it?`;
+		if (confirm(confirmationText) == false)
+			return; 
+	}
+	localStorage.removeItem(selectedRowToEdit.cells[0].innerHTML);
+	let arr = [formData.date, formData.summary];
+	localStorage.setItem(formData.title, JSON.stringify(arr));
+	blankForm();	
 }
 
 function blankForm() {
-    let formTitle = document.querySelector("#title");
-    formTitle.value = "";
-    let formDate = document.querySelector("#date");
-    formDate.value = "";
-    let formSummary = document.querySelector("#summary");
-    formSummary.value = "";
-    selectedRowToEdit = null;
+	let formTitle = document.querySelector("#title");
+	formTitle.value = "";
+	let formDate = document.querySelector("#date");
+	formDate.value = "";
+	let formSummary = document.querySelector("#summary");
+	formSummary.value = "";
+	selectedRowToEdit = null;
 }
 
 function fillFormForEdit(selectedEdit) {
-	let selectedRowToEdit = selectedEdit.parentElement.parentElement;
+	selectedRowToEdit = selectedEdit.parentElement.parentElement;
 	let confirmationText= `Edit post titled "${selectedRowToEdit.cells[0].innerHTML}"?\nAll contents of the current form will be replaced.`
 	if (confirm(confirmationText) == true) {
 		document.querySelector("#title").value = selectedRowToEdit.cells[0].innerHTML;
