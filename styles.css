@@ -47,14 +47,14 @@ h1 {
 
 textarea {
   padding: 1em;
-  width: 42%;
+  width: 45%;
   height: 10vw;
 }
 
 .spacefornav p{
   padding-top: 3px;
 }
-  
+
 table{
   font-size: small;
   border:1px solid black;
@@ -107,7 +107,7 @@ td{
   padding-right: 4px;   
   border:1px solid black;
   border-collapse: collapse;
-  width: 600px;
+  width: 230px;
   max-width:600px;
   word-wrap: break-word;
   background-color: white;
