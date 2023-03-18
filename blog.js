@@ -27,8 +27,8 @@ export function repopulateTable() {
 
 function removal(){
 	let table = document.querySelector("#blog-posts")
-	while(table.rows.length > 0) {
-		table.deleteRow(0);
+	while(table.rows.length > 1) {
+		table.deleteRow(1);
 	}
 }
 
